@@ -5,12 +5,15 @@
   border-radius: 50%;
   cursor: pointer !important;
 }
+
 .minibell-img {
   display: none;
 }
+
 .modal-notification::-webkit-scrollbar {
   display: none;
 }
+
 .modal-natif-dialog {
   position: relative;
   top: 60px;

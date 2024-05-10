@@ -14,7 +14,12 @@ import RedGoOut from "../../assets/images/red-go-out.svg";
 import Notification from "../../Modals/Natification";
 import { ALL_DATA } from "../../Query/get_all";
 import { IMG_BASE_URL } from "../../constants/img.constants";
-import { NavLeng, NavberLinks, exitLang } from "../../configs/language";
+import {
+  MenuLanguage,
+  NavLeng,
+  NavberLinks,
+  exitLang,
+} from "../../configs/language";
 import { LanguageContext } from "../../helper/languageContext";
 
 Modal.setAppElement("#root");
@@ -71,7 +76,7 @@ const Navbar = () => {
               height="12"
               alt="menu"
             />
-            <p className="menu-text">Меню</p>
+            <p className="menu-text">{MenuLanguage[languageChange]}</p>
           </button>
 
           {/*  hamburger menu star */}

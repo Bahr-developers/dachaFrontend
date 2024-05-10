@@ -9,7 +9,12 @@ import { useContext, useEffect, useRef, useState } from "react";
 import { IMG_BASE_URL } from "../../constants/img.constants";
 import EditImageIcon from "../../assets/images/edit.svg";
 import { useNavigate } from "react-router-dom";
-import { ProfileLeng } from "../../configs/language";
+import {
+  AddNewPageLanguage,
+  ProfileLeng,
+  ProfilePageLanguage,
+  signInLanguage,
+} from "../../configs/language";
 import { LanguageContext } from "../../helper/languageContext";
 import BreacdCrumbs from "../../components/BreadCrumbs/BreacdCrumbs";
 import { Helmet } from "react-helmet-async";
@@ -35,10 +40,11 @@ const User = () => {
   const editImage = useRef(null);
   const navigation = useNavigate();
   const [edit, setEdit] = useState(true);
+
   const userEdit = useMutation({
     mutationFn: userUtils.patchUser,
     onSuccess: async () => {
-      toastify.successMessage("User muvaffaqiyatli tahrirlandi");
+      toastify.successMessage(signInLanguage.successLogin[languageChange]);
       localStorage.setItem("user", JSON.stringify(userData?.data));
       saveData.current.classList.add("d-none");
       editImage.current.classList.add("d-none");
@@ -46,10 +52,11 @@ const User = () => {
       setEdit(true);
     },
     onError: (err) => {
-      toastify.errorMessage("Hatolik mavjud!!!");
+      toastify.errorMessage(AddNewPageLanguage.cottageError[languageChange]);
       console.log(err);
     },
   });
+
   const handleUser = (e) => {
     e.preventDefault();
     userEdit.mutate({
@@ -64,6 +71,7 @@ const User = () => {
       favoriteCottages: fovarite,
     });
   };
+
   const handleIsMianImage = async (e) => {
     ismainImage.current.src = await getBase64Full(e.target.files[0]);
     ismainImage.current.classList.remove("d-none");
@@ -71,6 +79,7 @@ const User = () => {
   useEffect(() => {
     if (!user) navigation("/");
   }, [navigation]);
+
   if (!user) navigation("/");
 
   // User profile language
@@ -110,9 +119,7 @@ const User = () => {
                   />
                 </label>
                 <img
-                  className={
-                    userImg ? "image-user-single" : "d-none image-user-single"
-                  }
+                  className={userImg ? "image-user-single" : "d-none"}
                   ref={ismainImage}
                   src={`${IMG_BASE_URL}${userImg}`}
                   alt="img"
@@ -122,7 +129,9 @@ const User = () => {
               <div className="user-info-wrap">
                 <div className="user-r">
                   <label className="w-100">
-                    <span className="input-name-lable">Name</span>
+                    <span className="input-name-lable">
+                      {AddNewPageLanguage.name[languageChange]}
+                    </span>
                     <input
                       disabled={edit}
                       className="user-input"
@@ -133,7 +142,9 @@ const User = () => {
                     />
                   </label>
                   <label className="w-100">
-                    <span className="input-name-lable">Number</span>
+                    <span className="input-name-lable">
+                      {ProfilePageLanguage.number[languageChange]}
+                    </span>
                     <input
                       disabled={edit}
                       className="user-input"
@@ -154,10 +165,6 @@ const User = () => {
                       placeholder="Email"
                     />
                   </label>
-                  <p className="user-text d-none">
-                    Что бы вы подать объявлении вам нужно вводить ваш серии
-                    номер паспорта.
-                  </p>
                 </div>
                 <button
                   ref={saveData}

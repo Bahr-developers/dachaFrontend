@@ -7,7 +7,7 @@ import { HiMenu } from "react-icons/hi";
 import { AiFillAppstore } from "react-icons/ai";
 
 import Modal from "react-modal";
-import React, { useState } from "react";
+import { useState } from "react";
 
 const FilterNav = () => {
   const [modal, setModal] = useState(false);

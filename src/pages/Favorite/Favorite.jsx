@@ -13,7 +13,7 @@ import { fovariteLang } from "../../configs/language";
 
 const Favorite = () => {
   const cottage = ALL_DATA.useCottage();
-  const {languageChange} = useContext(LanguageContext)
+  const { languageChange } = useContext(LanguageContext);
 
   const favoriteCottage = cottage?.data?.filter(
     (cottage) => cottage.isLiked === true

@@ -3,7 +3,6 @@ import "./MiniNaw.css";
 import { NavLink } from "react-router-dom";
 import { useRef } from "react";
 import { ALL_DATA } from "../../Query/get_all";
-import { AddNewIcon, FavoriteIcon, HomeIcon, UserIcon } from "../images/Images";
 
 // icons
 import { RiHomeFill } from "react-icons/ri";

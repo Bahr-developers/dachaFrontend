@@ -50,7 +50,7 @@ export const NavberLinks = {
     cottage: "My ads",
     profil: "Profile",
     services: "Services",
-    exit: "Exit",
+    exit: "Log Out",
   },
 };
 
@@ -59,6 +59,7 @@ export const PlaseLeng = {
   ru: "Месты Отдыха",
   en: "Vacation Place",
 };
+
 export const RecamudetLeng = {
   uz: "Tavsiya etilgan",
   ru: "Рекомендуемые",
@@ -70,6 +71,7 @@ export const FilterSectionLeng = {
   ru: "Раздел Фильтр",
   en: "Filter section",
 };
+
 export const FilterLeng = {
   uz: {
     place: "Joylashuv",
@@ -108,6 +110,7 @@ export const CottageLeng = {
     btn: "View ",
   },
 };
+
 // =============================== Servises language
 export const ProfileLeng = {
   uz: {
@@ -123,6 +126,7 @@ export const ProfileLeng = {
     btn: "Save",
   },
 };
+
 // =============================== Footer language
 export const FooterLink1 = [
   {
@@ -143,6 +147,7 @@ export const FooterLink1 = [
     to: "/",
   },
 ];
+
 export const FooterLink2 = [
   {
     id: uuidv4(),
@@ -172,6 +177,7 @@ export const FooterLink2 = [
     to: "/",
   },
 ];
+
 export const FooterLink3 = [
   {
     id: uuidv4(),
@@ -215,7 +221,7 @@ export const FooterHeadLeng = {
   },
   en: {
     link1: "Support",
-    link2: "Copany",
+    link2: "Company",
     link3: "Cooperation",
   },
 };
@@ -235,30 +241,31 @@ export const FilterNotFound = {
 export const fovariteLang = {
   uz: "Hozirda dachalar mavjud emas",
   ru: "Нет любимых коттеджей  ",
-  en: "Don't have favorite cottages"
-}
+  en: "Don't have favorite cottages",
+};
 export const notificationLang = {
   uz: "Bildirishnomalar",
   ru: "Уведомления",
-  en: "Notifications"
-}
+  en: "Notifications",
+};
 export const userCottageSingle = {
   uz: "ning dachalari",
   ru: " kоттеджe",
-  en: "'s Cottage"
-}
+  en: "'s Cottage",
+};
 export const exitLang = [
   {
     uz: "Chiqish",
     ru: "Выход",
-    en: "Exit"
+    en: "Exit",
   },
   {
     uz: "Kirish",
     ru: "Входить",
-    en: "Enter"
-  }
-]
+    en: "Log in",
+  },
+];
+
 export const ViewPageLanguage = {
   contactUser: {
     uz: "Foydalanuvchi",
@@ -287,3 +294,216 @@ export const ViewPageLanguage = {
   },
 };
 
+export const AddNewPageLanguage = {
+  maintitle: {
+    uz: "Rasm",
+    ru: "Фото",
+    en: "Photo",
+  },
+  addPhoto: {
+    uz: "Rasm qo'shish",
+    ru: "Добавить фото",
+    en: "Add photo",
+  },
+  mainPhoto: {
+    uz: "Asosiy",
+    ru: "Главный",
+    en: "Main",
+  },
+  typeCottage: {
+    uz: "Mintaqa va dam olish turi",
+    ru: "Регион и тип отдыха",
+    en: "Region and type of holiday",
+  },
+  cottageName: {
+    uz: "Kottej nomi",
+    ru: "Название коттеджа",
+    en: "Cottage name",
+  },
+  region: {
+    uz: "Viloyat",
+    ru: "Область",
+    en: "Region",
+  },
+  Place: {
+    uz: "Joylashuv",
+    ru: "Место",
+    en: "Place",
+  },
+  Price: {
+    uz: "Narxi",
+    ru: "Цена",
+    en: "Price",
+  },
+  weekendPrice: {
+    uz: "Hafta oxiridagi narxi",
+    ru: "Цена выходного дня",
+    en: "Weekend price",
+  },
+  dachaType: {
+    uz: "Dacha turi",
+    ru: "Тип коттеджа",
+    en: "Type of Cottage",
+  },
+  comforts: {
+    uz: "Qulayliklar",
+    ru: "Комфорт",
+    en: "Comforts",
+  },
+  description: {
+    uz: "Tavsifi",
+    ru: "Описание",
+    en: "Description",
+  },
+  shortDescription: {
+    uz: "Joyingizni qisqacha tasvirlab bering",
+    ru: "Кратко опищите о вашый месте",
+    en: "Describe your place",
+  },
+  save: {
+    uz: "Saqlash",
+    ru: " Сохранить",
+    en: "Save",
+  },
+  name: {
+    uz: "Nomi",
+    ru: "Имя",
+    en: "Name",
+  },
+  cottageSuccess: {
+    uz: "Kottej muvaffaqiyatli qo'shildi",
+    ru: "Коттедж успешно добавлен",
+    en: "Cottage added successfully",
+  },
+  cottageError: {
+    uz: "Xatolik",
+    ru: "Ошибка",
+    en: "Something went wrong",
+  },
+};
+
+export const AnnouncementPageLanguage = {
+  noAnnouncement: {
+    uz: "Hozircha siz e'lon bermagansiz",
+    ru: "Вы еще не опубликовали",
+    en: "You have not posted yet",
+  },
+  myannouncement: {
+    uz: "Mening e'lonlarim",
+    ru: "Мои объявлении",
+    en: "My ads",
+  },
+};
+
+export const ProfilePageLanguage = {
+  profile: {
+    uz: "Profil",
+    ru: "Профиль",
+    en: "Profile",
+  },
+  services: {
+    uz: "Xizmatlar",
+    en: "Services",
+    ru: "Услуги",
+  },
+  myCottage: {
+    uz: "Mening kottejlarim",
+    ru: "Мои коттеджи",
+    en: "My cottages",
+  },
+  number: {
+    uz: "Nomer",
+    ru: "номер",
+    en: "Number",
+  },
+};
+
+export const ServicesPageLanguage = {
+  mainTitle: {
+    uz: "Xizmatlar",
+    ru: "Услуги",
+    en: "Services",
+  },
+  viewTariff: {
+    uz: "Ko'rish",
+    ru: "Просмотры",
+    en: "View",
+  },
+};
+
+export const TariffPageLanguage = {
+  mainTitle: {
+    uz: "Ta'riflar",
+    ru: "Тарифы",
+    en: "Tariffs",
+  },
+  day: {
+    uz: "kun",
+    ru: "дней",
+    en: "days",
+  },
+  active: {
+    uz: "Faollashtirish",
+    ru: "Активировать за",
+    en: "Activate for",
+  },
+  price: {
+    uz: "Narxi",
+    ru: "Цена",
+    en: "Price",
+  },
+  selectCottage: {
+    uz: "Dachani tanlang",
+    ru: "Выбрать коттедж",
+    en: "Select Cottage",
+  },
+  Activite: {
+    uz: "Faollashtirish",
+    ru: "Активит",
+    en: " Activite",
+  },
+};
+
+export const signInLanguage = {
+  login: {
+    uz: "Kirish",
+    ru: "Вход",
+    en: "Log in",
+  },
+  phone: {
+    uz: "Raqamizni kiriting",
+    ru: "Введите свой телефон",
+    en: "Enter your phone",
+  },
+  enter: {
+    uz: "Kirish",
+    ru: "Войти",
+    en: "Log In",
+  },
+  smsCode: {
+    uz: "sms kod",
+    ru: "смс-код",
+    en: "sms code",
+  },
+  smsError: {
+    uz: "SMS kod noto'gri !!!",
+    ru: "СМС-код неверен.",
+    en: "code is incorrect",
+  },
+  successLogin: {
+    uz: "Muvaffaqiyatli",
+    ru: "Успешно",
+    en: "Successfully",
+  },
+  numberError: {
+    uz: "Raqam noto'g'ri kiritilgan",
+    ru: "Номер неверный",
+    en: "Number is incorrect",
+  },
+};
+
+export const MenuLanguage = {
+  uz: "Menu",
+  ru: "Меню",
+  en: "Menu",
+};

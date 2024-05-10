@@ -9,6 +9,7 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 import { useContext } from "react";
 import { LanguageContext } from "../../helper/languageContext";
 import { CottageLeng } from "../../configs/language";
+import PropTypes from "prop-types";
 
 const DachaCard = (props) => {
   const queryClient = useQueryClient();
@@ -116,3 +117,26 @@ const DachaCard = (props) => {
 };
 
 export default DachaCard;
+
+DachaCard.propTypes = {
+  cottage: PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    images: PropTypes.arrayOf(
+      PropTypes.shape({
+        isMainImage: PropTypes.bool.isRequired,
+        image: PropTypes.string.isRequired,
+      })
+    ).isRequired,
+    cottageStatus: PropTypes.string.isRequired,
+    isLiked: PropTypes.bool.isRequired,
+    name: PropTypes.string.isRequired,
+    region: PropTypes.shape({
+      name: PropTypes.string.isRequired,
+    }).isRequired,
+    place: PropTypes.shape({
+      name: PropTypes.string.isRequired,
+    }).isRequired,
+    price: PropTypes.number.isRequired,
+    priceWeekend: PropTypes.number.isRequired,
+  }).isRequired,
+};
