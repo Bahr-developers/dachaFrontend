@@ -17,9 +17,9 @@ const SignIn = () => {
   // get Language
   const { languageChange } = useContext(LanguageContext);
 
-  const smsForm = useRef(null);
-  const phoneForm = useRef(null);
-  
+  const smsForm = useRef("");
+  const phoneForm = useRef("");
+
   const smsInput = useRef(null);
   const navigate = useNavigate();
   console.log(phoneForm.current.classList, "phone");
@@ -32,25 +32,25 @@ const SignIn = () => {
     mutationFn: authUtils.smsAuth,
     onSuccess: (data) => {
       smsInput.current.value = data.smsCode;
-      toastify.successMessage("Login success");
-      
-    setTimeout(() => {
-      phoneForm.current.classList.add("d-none");
-    }, 500);
-    setTimeout(() => {
-      smsForm.current.classList.remove("d-none");
-    }, 500);
+      toastify.successMessage(signInLanguage.successLogin[languageChange]);
+
+      setTimeout(() => {
+        phoneForm.current.classList.add("d-none");
+      }, 500);
+      setTimeout(() => {
+        smsForm.current.classList.remove("d-none");
+      }, 500);
     },
     onError: (err) => {
       console.log(err);
-      toastify.errorMessage("Raqam noto'g'ri kiritilgan")
+      toastify.errorMessage(signInLanguage.numberError[languageChange]);
     },
   });
 
   const login = useMutation({
     mutationFn: authUtils.loginAuth,
     onSuccess: () => {
-      toastify.successMessage("Successfully logged in!");
+      toastify.successMessage(signInLanguage.successLogin[languageChange]);
       navigate("/home/profile/user");
     },
     onError: (err) => {
@@ -80,9 +80,9 @@ const SignIn = () => {
     }
   };
   const backOneHandle = () => {
-    if(!phoneForm.current.classList.value){
-      navigate('/')
-    }else{
+    if (!phoneForm.current.classList.value) {
+      navigate("/");
+    } else {
       setTimeout(() => {
         phoneForm.current.classList.remove("d-none");
       }, 500);
@@ -90,7 +90,7 @@ const SignIn = () => {
         smsForm.current.classList.add("d-none");
       }, 500);
     }
-  }
+  };
 
   return (
     <>
@@ -103,6 +103,9 @@ const SignIn = () => {
       <div className="signin">
         <div className="background">
           <div className="signin-box">
+            <span onClick={backOneHandle} className="one-back ">
+              <FaArrowLeft size={22} />
+            </span>
             <h2 className="signin-header">
               {signInLanguage.login[languageChange]}
             </h2>

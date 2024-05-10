@@ -32,15 +32,15 @@ const Contact = () => {
 
               <div className="contact-to-offece">
                 <div className="phone-nomer-conatct w-25 d-flex gap-3">
-                  <i class="bx bxs-phone-call fs-4 text-white"></i>
+                  <i className="bx bxs-phone-call fs-4 text-white"></i>
                   <p className="text-white">+998971082004</p>
                 </div>
                 <div className="phone-nomer-conatct w-25 d-flex gap-3">
-                  <i class="bx bx-envelope fs-4 text-white"></i>
+                  <i className="bx bx-envelope fs-4 text-white"></i>
                   <p className="text-white">demo@gmail.com</p>
                 </div>
                 <div className="phone-nomer-conatct w-100 d-flex gap-3">
-                  <i class="bx bxs-location-plus fs-4 text-white"></i>
+                  <i className="bx bxs-location-plus fs-4 text-white"></i>
                   <p className="text-white">
                     132 Dartmouth Street Boston, Massachusetts 02156 United
                     States
@@ -49,13 +49,13 @@ const Contact = () => {
               </div>
               <div className="offece-set d-flex">
                 <a href="https://instagram.com">
-                  <i class="bx bxl-instagram fs-4 text-white"></i>
+                  <i className="bx bxl-instagram fs-4 text-white"></i>
                 </a>
                 <a className="mx-3 d-block" href="https://instagram.com">
-                  <i class="bx bxl-twitter fs-4 text-white"></i>
+                  <i className="bx bxl-twitter fs-4 text-white"></i>
                 </a>
                 <a href="https://instagram.com">
-                  <i class="bx bxl-telegram fs-4 text-white"></i>
+                  <i className="bx bxl-telegram fs-4 text-white"></i>
                 </a>
               </div>
             </div>

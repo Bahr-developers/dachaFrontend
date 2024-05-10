@@ -10,6 +10,7 @@ const SignUp = () => {
         <meta name="description" content="Sign Up page" />
         <link rel="canonical" href="/signup" />
       </Helmet>
+
       <div className="signin">
         <div className="background">
           <div className="signup-box">

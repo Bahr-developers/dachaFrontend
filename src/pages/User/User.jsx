@@ -13,6 +13,7 @@ import {
   AddNewPageLanguage,
   ProfileLeng,
   ProfilePageLanguage,
+  signInLanguage,
 } from "../../configs/language";
 import { LanguageContext } from "../../helper/languageContext";
 import BreacdCrumbs from "../../components/BreadCrumbs/BreacdCrumbs";
@@ -39,10 +40,11 @@ const User = () => {
   const editImage = useRef(null);
   const navigation = useNavigate();
   const [edit, setEdit] = useState(true);
+
   const userEdit = useMutation({
     mutationFn: userUtils.patchUser,
     onSuccess: async () => {
-      toastify.successMessage("User muvaffaqiyatli tahrirlandi");
+      toastify.successMessage(signInLanguage.successLogin[languageChange]);
       localStorage.setItem("user", JSON.stringify(userData?.data));
       saveData.current.classList.add("d-none");
       editImage.current.classList.add("d-none");
@@ -50,10 +52,11 @@ const User = () => {
       setEdit(true);
     },
     onError: (err) => {
-      toastify.errorMessage("Hatolik mavjud!!!");
+      toastify.errorMessage(AddNewPageLanguage.cottageError[languageChange]);
       console.log(err);
     },
   });
+
   const handleUser = (e) => {
     e.preventDefault();
     userEdit.mutate({
@@ -68,6 +71,7 @@ const User = () => {
       favoriteCottages: fovarite,
     });
   };
+
   const handleIsMianImage = async (e) => {
     ismainImage.current.src = await getBase64Full(e.target.files[0]);
     ismainImage.current.classList.remove("d-none");

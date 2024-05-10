@@ -56,12 +56,16 @@ const AddNew = () => {
     mutationFn: cottageUtils.postCottage,
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["cotteges"] });
-      toastify.successMessage("Dacha muvaffaqiyat qo'shildi");
+      toastify.successMessage(
+        AddNewPageLanguage.cottageSuccess[languageChange]
+      );
     },
     onError: (err) => {
+      console.log(err, "err");
       if (err?.response?.status === 406) {
         authUtils.refreshAuth();
       }
+      toastify.errorMessage(AddNewPageLanguage.cottageError[languageChange]);
     },
   });
 

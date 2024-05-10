@@ -265,6 +265,7 @@ export const exitLang = [
     en: "Log in",
   },
 ];
+
 export const ViewPageLanguage = {
   contactUser: {
     uz: "Foydalanuvchi",
@@ -368,6 +369,16 @@ export const AddNewPageLanguage = {
     uz: "Nomi",
     ru: "Имя",
     en: "Name",
+  },
+  cottageSuccess: {
+    uz: "Kottej muvaffaqiyatli qo'shildi",
+    ru: "Коттедж успешно добавлен",
+    en: "Cottage added successfully",
+  },
+  cottageError: {
+    uz: "Xatolik",
+    ru: "Ошибка",
+    en: "Something went wrong",
   },
 };
 
@@ -478,6 +489,16 @@ export const signInLanguage = {
     uz: "SMS kod noto'gri !!!",
     ru: "СМС-код неверен.",
     en: "code is incorrect",
+  },
+  successLogin: {
+    uz: "Muvaffaqiyatli",
+    ru: "Успешно",
+    en: "Successfully",
+  },
+  numberError: {
+    uz: "Raqam noto'g'ri kiritilgan",
+    ru: "Номер неверный",
+    en: "Number is incorrect",
   },
 };
 
