@@ -202,7 +202,6 @@ const View = () => {
                 to={`tel:+998${cottageView?.user.phone}`}
                 className="btn btn-outline-success callLink p-0 call-me mt-3 text-center"
               >
-                {" "}
                 <FiPhoneCall size={23} />{" "}
                 <span className="fs-5 fw-bold">
                   {ViewPageLanguage.userContact[languageChange]}
