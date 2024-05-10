@@ -8,9 +8,13 @@ import { Helmet } from "react-helmet-async";
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
 import Loader from "../../components/Loader/Loader";
+import { useContext } from "react";
+import { LanguageContext } from "../../helper/languageContext";
+import { TariffPageLanguage } from "../../configs/language";
 
 const Tarif = () => {
   const tariff = ALL_DATA.useTariff();
+  const { languageChange } = useContext(LanguageContext);
 
   if (tariff.isLoading) return <Loader />;
 
@@ -24,7 +28,9 @@ const Tarif = () => {
       <div className="container">
         <Navbar />
         <div className="tarif">
-          <h2 className="tarif-header font-bold">Тарифы</h2>
+          <h2 className="tarif-header font-bold">
+            {TariffPageLanguage.mainTitle[languageChange]}
+          </h2>
 
           <div className="tarif-cards wrap-tarif-cards">
             {tariff.data?.length &&
@@ -34,7 +40,8 @@ const Tarif = () => {
                     <div className={i >= 3 ? "tarif-card mt-4" : "tarif-card"}>
                       <p className="tarif-name">{el.service.serviceCode}</p>
                       <div className="tarif-date1">
-                        {el.days} <br /> дней
+                        {el.days} <br />{" "}
+                        {TariffPageLanguage.day[languageChange]}
                       </div>
                       <p className="tarif-text">{el.description}</p>
                       <Tariff tariff={el} id={el.id} />

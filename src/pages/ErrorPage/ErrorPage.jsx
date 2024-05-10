@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import "./ErrorPage.css";
 import { Helmet } from "react-helmet-async";
@@ -11,6 +10,7 @@ const ErrorPage = () => {
         <meta name="description" content="Error page" />
         <link rel="canonical" href="/error" />
       </Helmet>
+
       <section className="page_404">
         <div className="container">
           <div className="row">
@@ -21,7 +21,7 @@ const ErrorPage = () => {
                 </div>
 
                 <div className="contant_box_404">
-                  <h3 className="h2">Look like you're lost</h3>
+                  <h3 className="h2">Look like you are lost</h3>
 
                   <p>the page you are looking for not avaible!</p>
 

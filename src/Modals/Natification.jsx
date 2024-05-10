@@ -17,7 +17,7 @@ function Natification() {
   const user = JSON.parse(localStorage.getItem("user")) || undefined;
   const location = useLocation();
   const notification = ALL_DATA.useNotificationUser(user?.id)?.data;
-  const {languageChange} = useContext(LanguageContext)
+  const { languageChange } = useContext(LanguageContext);
   const notifications = notification?.filter((notif) => notif.status === "new");
 
   // edit Notification
@@ -25,7 +25,6 @@ function Natification() {
     mutationFn: notificationUtils.patchNatification,
     onSuccess: () => {
       querClient.invalidateQueries({ queryKey: [QUERY_KEYS.notification] });
-      console.log("success");
     },
     onError: (error) => {
       console.log(error.message);
@@ -73,7 +72,9 @@ function Natification() {
         </div>
         <p
           style={
-            location?.pathname === "/" || location?.pathname === "/home" ? { right: "28px" } : { right: "5px" }
+            location?.pathname === "/" || location?.pathname === "/home"
+              ? { right: "28px" }
+              : { right: "5px" }
           }
           className={`m-0 ${
             notifications?.length > 0 ? "notifLength" : "d-none"
@@ -131,7 +132,7 @@ function Natification() {
                               }`}
                               onClick={() => handleRead(mes.id)}
                             >
-                              Read
+                              <IoMdDoneAll size={23} />
                             </button>
                             <span
                               className={`text-secondary ${

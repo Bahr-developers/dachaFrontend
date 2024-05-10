@@ -1,6 +1,6 @@
 import "./Filters.css";
 import FilterSearch from "../../assets/images/filter-search.svg";
-import React, { useState } from "react";
+import { useState } from "react";
 
 const Filters = () => {
   const [data, setData] = useState(0);

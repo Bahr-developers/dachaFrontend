@@ -5,9 +5,15 @@ import DachaCard from "../../components/DachaCards/DachaCard";
 import DachaMiniCard from "../../components/DachaMiniCard/DachaMiniCard";
 import MiniNaw from "../../components/MiniNaw/MiniNaw";
 import "./Announcoment.css";
+import { AnnouncementPageLanguage } from "../../configs/language";
+import { useContext } from "react";
+import { LanguageContext } from "../../helper/languageContext";
 
 function Announcoment() {
   const userCottage = ALL_DATA.useCottageUserId();
+
+  const { languageChange } = useContext(LanguageContext);
+
   return (
     <>
       <Helmet>
@@ -21,7 +27,9 @@ function Announcoment() {
           <div className="announcementDacha">
             {userCottage.data && userCottage.data.length ? (
               <>
-                <h2 className="m-0 obnavleniya">Мои объявлении</h2>
+                <h2 className="m-0 obnavleniya">
+                  {AnnouncementPageLanguage.myannouncement[languageChange]}
+                </h2>
                 <div className="dacha-cards">
                   {userCottage.data?.length &&
                     userCottage.data.map((e) => {
@@ -41,7 +49,7 @@ function Announcoment() {
               <>
                 <div className="border-warning border emptyAnnouncement">
                   <p className="emptyText m-0">
-                    Hozircha siz e'lon bermagansiz
+                    {AnnouncementPageLanguage.noAnnouncement[languageChange]}
                   </p>
                 </div>
               </>

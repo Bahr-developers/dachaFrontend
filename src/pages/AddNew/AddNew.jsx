@@ -1,7 +1,7 @@
 import Dacha3 from "../../assets/images/dacha3.png";
 import AddImg from "../../assets/images/add-img.svg";
 import "./AddNew.css";
-import { useRef, useState } from "react";
+import { useContext, useRef, useState } from "react";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { IMG_BASE_URL } from "../../constants/img.constants";
 import { cottageUtils } from "../../utils/cottage.utils";
@@ -9,10 +9,12 @@ import { authUtils } from "../../utils/auth.utils";
 import { ALL_DATA } from "../../Query/get_all";
 import MiniNaw from "../../components/MiniNaw/MiniNaw";
 import toastify from "../../utils/toastify";
+import { LanguageContext } from "../../helper/languageContext";
 
 import BreacdCrumbs from "../../components/BreadCrumbs/BreacdCrumbs";
 
 import { Helmet } from "react-helmet-async";
+import { AddNewPageLanguage } from "../../configs/language";
 
 // Images transform getbase64Full
 async function getBase64Full(file) {
@@ -28,11 +30,14 @@ async function getBase64Full(file) {
 
 const AddNew = () => {
   const mainImage = useRef(null);
+
   const childImagesWrapper = useRef(null);
+
   const [cottageInfo, setCottageInfo] = useState({
     dachaType: [],
     response: [],
   });
+
   const [cottageComforts, setcottageComforts] = useState({
     comforts: [],
     response: [],
@@ -51,14 +56,19 @@ const AddNew = () => {
     mutationFn: cottageUtils.postCottage,
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["cotteges"] });
-      toastify.successMessage("Dacha muvaffaqiyat qo'shildi");
+      toastify.successMessage(
+        AddNewPageLanguage.cottageSuccess[languageChange]
+      );
     },
     onError: (err) => {
+      console.log(err, "err");
       if (err?.response?.status === 406) {
         authUtils.refreshAuth();
       }
+      toastify.errorMessage(AddNewPageLanguage.cottageError[languageChange]);
     },
   });
+
   const handlChoseCottageType = (e) => {
     const { value, checked } = e.target;
     const { dachaType } = cottageInfo;
@@ -138,6 +148,9 @@ const AddNew = () => {
     }
   };
 
+  // get Language
+  const { languageChange } = useContext(LanguageContext);
+
   return (
     <>
       <Helmet>
@@ -149,7 +162,9 @@ const AddNew = () => {
       <div className="container">
         <BreacdCrumbs />
         <div className="addnew">
-          <h3 className="addnew-header">Фото</h3>
+          <h3 className="addnew-header">
+            {AddNewPageLanguage.maintitle[languageChange]}
+          </h3>
           <form onSubmit={handlCottage}>
             <div className="addnew-imgs">
               <div className="addnew-box">
@@ -160,7 +175,9 @@ const AddNew = () => {
                     className="input-file"
                     onChange={handleMainImage}
                   />
-                  <p className="addnew-img-text">Главный</p>
+                  <p className="addnew-img-text">
+                    {AddNewPageLanguage.mainPhoto[languageChange]}
+                  </p>
                 </label>
                 <img
                   ref={mainImage}
@@ -179,24 +196,30 @@ const AddNew = () => {
                     onChange={handlmultipleImg}
                   />
                   <img src={AddImg} alt="add" />
-                  <p className="addnew-add-text">Добавить фото</p>
+                  <p className="addnew-add-text">
+                    {AddNewPageLanguage.addPhoto[languageChange]}
+                  </p>
                 </label>
               </div>
               <div ref={childImagesWrapper} className="image-child-wrap "></div>
             </div>
 
             <div>
-              <h3 className="addnew-header">Регион и тип отдыха</h3>
-              <h5>Cottage name</h5>
+              <h3 className="addnew-header">
+                {AddNewPageLanguage.typeCottage[languageChange]}
+              </h3>
+              <h5>{AddNewPageLanguage.cottageName[languageChange]}</h5>
               <input
                 type="text"
                 name="cottagename"
                 className="add-new-title-main my-4"
-                placeholder="Name"
+                placeholder={AddNewPageLanguage.name[languageChange]}
               />
               <div className="wrap-region-place">
                 <div className="mini-wrap-select">
-                  <h3 className="addnew-label mb-3">Viloyat</h3>
+                  <h3 className="addnew-label mb-3">
+                    {AddNewPageLanguage.region[languageChange]}
+                  </h3>
                   <select
                     name="region"
                     className="addnew-select form-select w-100"
@@ -213,7 +236,9 @@ const AddNew = () => {
                 </div>
 
                 <div className="mini-wrap-select">
-                  <h3 className="addnew-label mb-3">Joylashuv</h3>
+                  <h3 className="addnew-label mb-3">
+                    {AddNewPageLanguage.Place[languageChange]}
+                  </h3>
                   <select
                     name="place"
                     className="addnew-select  d-block form-select w-100"
@@ -230,23 +255,25 @@ const AddNew = () => {
                 </div>
               </div>
 
-              <h5>Price</h5>
+              <h5>{AddNewPageLanguage.Price[languageChange]}</h5>
               <div className="price-wrap  d-flex gap-2 mb-4">
                 <input
                   type="number"
                   name="price"
                   className="form-control w-100"
-                  placeholder="Price"
+                  placeholder={AddNewPageLanguage.Price[languageChange]}
                 />
                 <input
                   type="number"
                   name="priceweekend"
                   className="form-control w-100"
-                  placeholder="Weekend Price"
+                  placeholder={AddNewPageLanguage.weekendPrice[languageChange]}
                 />
               </div>
 
-              <h3 className="addnew-label mb-3">Dacha turi</h3>
+              <h3 className="addnew-label mb-3">
+                {AddNewPageLanguage.dachaType[languageChange]}
+              </h3>
               <div className="addnew-inner">
                 {cottageType.data?.length &&
                   cottageType.data.map((e) => {
@@ -266,7 +293,9 @@ const AddNew = () => {
               </div>
             </div>
 
-            <h3 className="addnew-header">Qulayliklar</h3>
+            <h3 className="addnew-header">
+              {AddNewPageLanguage.comforts[languageChange]}
+            </h3>
 
             <div className="addnew-objects">
               {comforts.data?.length &&
@@ -291,15 +320,17 @@ const AddNew = () => {
                 })}
             </div>
 
-            <h3 className="addnew-header">Описание</h3>
+            <h3 className="addnew-header">
+              {AddNewPageLanguage.description[languageChange]}
+            </h3>
             <textarea
               type="text form-control"
               name="discription"
               className="addnew-message"
-              placeholder="Кратко опищите о вашый месте"
+              placeholder={AddNewPageLanguage.shortDescription[languageChange]}
             />
             <button type="submit" className="soxranit">
-              Сохранить
+              {AddNewPageLanguage.save[languageChange]}
             </button>
           </form>
         </div>

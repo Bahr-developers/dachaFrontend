@@ -9,6 +9,8 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 
 import "react-lazy-load-image-component/src/effects/blur.css";
 
+import PropTypes from "prop-types";
+
 const DachaMiniCard = (props) => {
   const mainImg = props.cottage.images.find(
     (e) => e.isMainImage === true
@@ -102,3 +104,25 @@ const DachaMiniCard = (props) => {
 };
 
 export default DachaMiniCard;
+
+DachaMiniCard.propTypes = {
+  cottage: PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    images: PropTypes.arrayOf(
+      PropTypes.shape({
+        isMainImage: PropTypes.bool.isRequired,
+        image: PropTypes.string.isRequired,
+      })
+    ).isRequired,
+    cottageStatus: PropTypes.string.isRequired,
+    isLiked: PropTypes.bool.isRequired,
+    name: PropTypes.string.isRequired,
+    region: PropTypes.shape({
+      name: PropTypes.string.isRequired,
+    }).isRequired,
+    place: PropTypes.shape({
+      name: PropTypes.string.isRequired,
+    }).isRequired,
+    price: PropTypes.number.isRequired,
+  }).isRequired,
+};

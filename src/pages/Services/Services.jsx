@@ -1,4 +1,3 @@
-import React from "react";
 import "./Services.css";
 import MiniNaw from "../../components/MiniNaw/MiniNaw";
 import { Link } from "react-router-dom";
@@ -8,9 +7,13 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Helmet } from "react-helmet-async";
 import BreacdCrumbs from "../../components/BreadCrumbs/BreacdCrumbs";
 import Loader from "../../components/Loader/Loader";
+import { useContext } from "react";
+import { LanguageContext } from "../../helper/languageContext";
+import { ServicesPageLanguage } from "../../configs/language";
 
 const Services = () => {
   const services = ALL_DATA.useServices();
+  const { languageChange } = useContext(LanguageContext);
 
   if (services.isLoading) return <Loader />;
 
@@ -21,9 +24,12 @@ const Services = () => {
         <meta name="description" content="Services page" />
         <link rel="canonical" href="/services" />
       </Helmet>
+
       <div className="container">
         <BreacdCrumbs />
-        <h2 className="mt-3">Services</h2>
+        <h2 className="mt-3">
+          {ServicesPageLanguage.mainTitle[languageChange]}
+        </h2>
         <div className="services-wrap">
           {services.data?.length &&
             services.data.map((el) => {
@@ -38,7 +44,7 @@ const Services = () => {
                   <h4 className="services-card-name">{el.name}</h4>
                   <p className="services-card-description">{el.description}</p>
                   <Link className="services-card-link" to="/tarif">
-                    View tariff
+                    {ServicesPageLanguage.viewTariff[languageChange]}
                   </Link>
                 </div>
               );

@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
-
 import "./PlacesCard.css";
-
 import { IMG_BASE_URL } from "../../constants/img.constants";
 import { LazyLoadImage } from "react-lazy-load-image-component";
+
+import PropTypes from "prop-types";
 
 const PlacesCard = (props) => {
   return (
@@ -18,6 +18,13 @@ const PlacesCard = (props) => {
       <p className="places-card-name">{props.name}</p>
     </Link>
   );
+};
+
+// Define PropTypes for the PlacesCard component
+PlacesCard.propTypes = {
+  id: PropTypes.string.isRequired,
+  img: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
 };
 
 export default PlacesCard;
