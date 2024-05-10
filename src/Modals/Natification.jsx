@@ -86,9 +86,6 @@ function Natification() {
       <div
         className="modal  fade modal-natif"
         id="staticBackdrop"
-        data-bs-backdrop="static"
-        data-bs-keyboard="false"
-        tabIndex="-1"
         aria-labelledby="staticBackdropLabel"
         aria-hidden="true"
       >
