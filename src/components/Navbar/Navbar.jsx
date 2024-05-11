@@ -80,7 +80,7 @@ const Navbar = () => {
           </button>
 
           {/*  hamburger menu star */}
-          <div className="hamburgerClassname">
+          <div className={`${modalIsOpen ? "hamburgerClassname" : "d-none"}`}>
             <div
               className={`hamburgerMenu d-flex justify-content-between ${
                 modalIsOpen ? "hamburgerMenuActive" : "hamburgerMenuClose"
@@ -157,7 +157,9 @@ const Navbar = () => {
                 </button>
               </div>
             </div>
-            <div className={`${modalIsOpen ? "overlayMenuActive" : ""}`}></div>
+            <div
+              className={`${modalIsOpen ? "overlayMenuActive" : "d-none"}`}
+            ></div>
           </div>
           {/*  hamburger menu end */}
 
@@ -219,9 +221,7 @@ const Navbar = () => {
             <Link to="/home/favorite" className="heart">
               <FiHeart className="heart-icon" />
               <span
-                className={
-                  fovariteCottage === 0 ? "fovarite-num d-none" : "fovarite-num"
-                }
+                className={fovariteCottage === 0 ? "d-none" : "fovarite-num"}
               >
                 {fovariteCottage}
               </span>
@@ -254,7 +254,7 @@ const Navbar = () => {
                 <div className="user-nav">
                   <img
                     src={`${IMG_BASE_URL}${user?.image}`}
-                    className={user?.image ? "user-nav" : "user-nav d-none"}
+                    className={user?.image ? "user-nav" : "d-none"}
                     alt=""
                   />
                 </div>
@@ -262,11 +262,11 @@ const Navbar = () => {
               <ul className="dropdown-menu userDropdown">
                 <div className="user-modal-nav-top">
                   <p className="um-top-gmail">
-                    {user?.name.split(" ")[1] || "user email"}
+                    {user?.name?.split(" ")[1] || "user email"}
                   </p>
                   <img
                     src={`${IMG_BASE_URL}${user?.image}`}
-                    className={user?.image ? "um-top-img" : "d-none um-top-img"}
+                    className={user?.image ? "um-top-img" : "d-none"}
                     alt="userImg"
                   />
                 </div>
