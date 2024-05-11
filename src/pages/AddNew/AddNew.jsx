@@ -303,7 +303,7 @@ const AddNew = () => {
                   return (
                     <label key={e.id} className="addnew-object">
                       <input
-                        className="addnew-check"
+                        className="addnew-check-camforts"
                         type="checkbox"
                         value={e.id}
                         onChange={handleCottageComforts}

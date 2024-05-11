@@ -122,11 +122,15 @@
   background: #2c2d2e;
   border-radius: 35px;
   display: grid;
-  grid-template-columns: repeat(3, 300px);
+  grid-template-columns: repeat(2, 370px);
   row-gap: 16px;
   column-gap: 90px;
 }
-
+.addnew-check-camforts{
+  width: 18px;
+  height: 18px;
+  background: #3cd298;
+}
 .addnew-objects-l {
   width: 485px;
 }
