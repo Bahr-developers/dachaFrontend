@@ -60,7 +60,7 @@ const View = () => {
         <link rel="canonical" href="/view" />
       </Helmet>
 
-      <div className="viewWrapper">
+      <div className="viewWrapper mb-2 ">
         <div className="container">
           <BreacdCrumbs />
           <div className="view">
