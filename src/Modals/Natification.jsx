@@ -76,11 +76,12 @@ function Natification() {
               ? { right: "28px" }
               : { right: "5px" }
           }
-          className={`m-0 ${
-            notifications?.length > 0 ? "notifLength" : "d-none"
-          }`}
+          className="m-0 notifLength"
+          // className={`m-0 ${
+          //   notifications?.length > 0 ? "notifLength" : "d-none"
+          // }`}
         >
-          {notifications?.length > 0 ? notifications.length : ""}
+          {notifications?.length===undefined?0:notifications?.length}
         </p>
       </button>
       <div

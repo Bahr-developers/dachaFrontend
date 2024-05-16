@@ -33,8 +33,9 @@ const Places = () => {
           slidesPerView={5}
           spaceBetween={25}
           keyboard={{
-            enabled: true,
+            enabled: true,          
           }}
+          loop={true}
           navigation={{
             prevEl: prevPlaceElm.current,
             nextEl: nextPlaceElm.current,

@@ -12,11 +12,11 @@ export const authUtils = {
     localStorage.setItem("refreshToken", data.refreshToken);
     localStorage.setItem("user", JSON.stringify(data?.user));
 
+
     // rewrite axios token
     custimAxios.defaults.headers.common[
       "Authorization"
     ] = `Bearer ${data.accessToken}`;
-
     return data;
   },
 

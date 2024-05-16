@@ -1,4 +1,5 @@
 import custimAxios from "../configs/axios.config";
+const userSingle = localStorage.getItem('user')
 
 export const notificationUtils = {
   getNotification: async () => {
@@ -7,8 +8,10 @@ export const notificationUtils = {
   },
   getUserNotification: async (id) => {
     const data = [];
-    data.push(...(await custimAxios.get(`/notification/by/${id}`)).data);
-    return data;
+    if(userSingle){
+      data.push(...(await custimAxios.get(`/notification/by/${id}`)).data);
+      return data;
+    }
   },
   patchNatification: async ({ id, watchedUserId, status }) => {
     const { data } = await custimAxios.patch(`/notification/update/${id}`, {

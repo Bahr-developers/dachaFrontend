@@ -34,7 +34,8 @@ const User = () => {
   const userData = ALL_DATA.useSingleUser();
   const user = JSON.parse(localStorage.getItem("user"));
   const userImg = userData?.data?.image;
-  const fovarite = JSON.parse(localStorage.getItem("liked"));
+  const fovarite = JSON.parse(localStorage.getItem("liked")) || "";
+  console.log(fovarite);
   const ismainImage = useRef(null);
   const saveData = useRef(null);
   const editImage = useRef(null);
@@ -61,14 +62,11 @@ const User = () => {
     e.preventDefault();
     userEdit.mutate({
       id: user.id,
-      phone:
-        e.target.phone.value.slice(4) === user.phone
-          ? ""
-          : e.target.phone.value.slice(4),
+      phone: e.target.phone.value.slice(4) === user.phone ? "": e.target.phone.value.slice(4),
       email: e.target.email.value || "",
       name: e.target.name.value || "",
       image: e.target.userImage.files[0],
-      favoriteCottages: fovarite,
+      favoriteCottages: fovarite || "",
     });
   };
 

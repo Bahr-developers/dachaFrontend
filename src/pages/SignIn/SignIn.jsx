@@ -22,8 +22,6 @@ const SignIn = () => {
 
   const smsInput = useRef(null);
   const navigate = useNavigate();
-  console.log(phoneForm.current.classList, "phone");
-  console.log(smsForm.current.classList, "sms");
 
   // eye btn
   const [passwordShow, setPasswordShow] = useState(true);
