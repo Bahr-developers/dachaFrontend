@@ -36,9 +36,8 @@ const Header = () => {
     type: "",
     price: "",
   });
-
+  
   const cottageFilter = ALL_DATA.useCottageFilter(filter);
-
   const handleFilterCottage = (e) => {
     e.preventDefault();
     setFilter({
@@ -104,7 +103,7 @@ const Header = () => {
               })}
         </Swiper>
 
-        <form className="header-menu" onSubmit={handleFilterCottage}>
+        {/* <form className="header-menu" onSubmit={handleFilterCottage}>
           <div className="header-inner">
             <div className="header-inner-box">
               <p className="header-top">{FilterLeng[languageChange].place}</p>
@@ -164,9 +163,9 @@ const Header = () => {
               alt="search"
             />
           </button>
-        </form>
+        </form> */}
 
-        {/************************************* Filter modal */}
+        {/****************************************** Filter modal */}
         <button
           onClick={() => setShowModal(!showModal)}
           className="mini-search-icon"
@@ -260,7 +259,7 @@ const Header = () => {
         </div>
       </header>
 
-      <FilterSEction cottageFilter={cottageFilter} />
+      <FilterSEction filter={filter} cottageFilter={cottageFilter} />
     </>
   );
 };

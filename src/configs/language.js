@@ -507,3 +507,8 @@ export const MenuLanguage = {
   ru: "Меню",
   en: "Menu",
 };
+export const notPlace = {
+  uz: "Bu dam olish maskanida dacha topilmadi ",
+  ru: "На этом курорте коттеджей не найдено ",
+  en: "No cottages found in this resort "
+}

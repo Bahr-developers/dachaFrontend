@@ -3,13 +3,21 @@ import DachaCard from "../DachaCards/DachaCard";
 import DachaMiniCard from "../DachaMiniCard/DachaMiniCard";
 import "./FilterSection.css";
 import { LanguageContext } from "../../helper/languageContext";
-import { FilterSectionLeng } from "../../configs/language";
+import { FilterSectionLeng, notPlace } from "../../configs/language";
 import PropTypes from "prop-types";
 
-function FilterSEction({ cottageFilter }) {
+function FilterSEction({ cottageFilter, filter }) {
   const cottage = cottageFilter;
   // useContext language
   const { languageChange } = useContext(LanguageContext);
+  if(filter.place!=="" && !cottageFilter.data?.length){
+    return <div className="container">
+      <h2 className="dacha-top-filter">
+          {FilterSectionLeng[languageChange]}
+      </h2>
+      <p className="text-danger">{notPlace[languageChange]} 😔</p>
+    </div>
+  }
 
   return (
     <div className={cottage?.data?.length ? "container" : "d-none"}>
