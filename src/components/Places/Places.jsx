@@ -64,6 +64,7 @@ const Places = () => {
           className="swiper-place-mini"
           slidesPerView={3}
           spaceBetween={10}
+          loop={true}
           keyboard={{
             enabled: true,
           }}
