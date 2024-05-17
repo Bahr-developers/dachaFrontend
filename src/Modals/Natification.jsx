@@ -19,7 +19,6 @@ function Natification() {
   const notification = ALL_DATA.useNotificationUser(user?.id)?.data;
   const { languageChange } = useContext(LanguageContext);
   const notifications = notification?.filter((notif) => notif.status === "new");
-
   // edit Notification
   const editNotificationById = useMutation({
     mutationFn: notificationUtils.patchNatification,
@@ -43,7 +42,7 @@ function Natification() {
   return (
     <>
       <button
-        className="btn notificationsBtn"
+        className="border-0 btn notificationsBtn"
         data-bs-toggle="modal"
         data-bs-target="#staticBackdrop"
       >
@@ -76,12 +75,11 @@ function Natification() {
               ? { right: "28px" }
               : { right: "5px" }
           }
-          className="m-0 notifLength"
-          // className={`m-0 ${
-          //   notifications?.length > 0 ? "notifLength" : "d-none"
-          // }`}
+          className={`m-0 ${
+            notifications?.length > 0 ? "notifLength" : "d-none"
+          }`}
         >
-          {notifications?.length===undefined?0:notifications?.length}
+          {notifications?.length>0?notifications?.length:""}
         </p>
       </button>
       <div
@@ -104,7 +102,8 @@ function Natification() {
               ></button>
             </div>
             <div className="modal-body">
-              {notification?.length &&
+              {/* {!notifications?.length ? <p className="text-secondary ">Bildirishnomalar mavjud emas</p>: ""} */}
+                {!notification?.length ? <p className="text-black noneFavoriteCart border-warning border">Bildirishnomalar mavjud emas</p>:
                 notification.map((mes) => {
                   const time = mes?.createdAt.split("T");
                   return (
@@ -153,6 +152,7 @@ function Natification() {
                     </div>
                   );
                 })}
+              
             </div>
           </div>
         </div>

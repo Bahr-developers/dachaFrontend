@@ -23,6 +23,7 @@ import { LanguageContext } from "../../helper/languageContext";
 import { IMG_BASE_URL } from "../../constants/img.constants";
 import { FaSearch } from "react-icons/fa";
 import { IoCloseSharp } from "react-icons/io5";
+import { IoFilterCircleSharp } from "react-icons/io5";
 
 const Header = () => {
   const cottageTop = ALL_DATA.useCottage()?.data;
@@ -103,7 +104,7 @@ const Header = () => {
               })}
         </Swiper>
 
-        {/* <form className="header-menu" onSubmit={handleFilterCottage}>
+        <form className="header-menu" onSubmit={handleFilterCottage}>
           <div className="header-inner">
             <div className="header-inner-box">
               <p className="header-top">{FilterLeng[languageChange].place}</p>
@@ -163,7 +164,7 @@ const Header = () => {
               alt="search"
             />
           </button>
-        </form> */}
+        </form>
 
         {/****************************************** Filter modal */}
         <button
@@ -221,7 +222,6 @@ const Header = () => {
                     })}
                 </select>
               </div>
-              <div className="d-flex position-relative align-items-start justify-content-between">
                 <div className="header-inner-box-mini">
                   <p className="header-top-usd">
                     {FilterLeng[languageChange].price}:
@@ -232,28 +232,15 @@ const Header = () => {
                     name="price"
                     placeholder="400$"
                   />
-                </div>
+                </div>               
                 <button
                   onClick={() => setShowModal(false)}
                   type="submit"
-                  className="header-search btn bg-success rounded-pill p-2 border-0 border-0 "
+                  className="header-search btn"
                 >
-                  <img
-                    className="mini-search"
-                    src={MiniSearch}
-                    width="22.99"
-                    height="22.97"
-                    alt="seach"
-                  />
-                  <img
-                    className="search-img"
-                    src={Search}
-                    width="34.49"
-                    height="34.45"
-                    alt="search"
-                  />
+                  <IoFilterCircleSharp size={30}/>
+                  <p className="text-black fw-bold fs-3">Filter</p>
                 </button>
-              </div>
             </div>
           </form>
         </div>

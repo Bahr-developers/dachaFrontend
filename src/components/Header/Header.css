@@ -115,10 +115,10 @@
   text-align: left;
   font-family: sans-serif;
   font-style: normal;
-  font-weight: 400;
-  font-size: 14px;
+  font-weight: 600;
+  font-size: 19px;
   line-height: 17px;
-  color: #ffffff;
+  color: #fff;
 }
 .header-select-one {
   height: 25px;
@@ -211,15 +211,15 @@
   }
   .modal-filter {
     transition: all 0.8s ease-in-out;
-    color: white;
+    color: black;
     position: relative;
-    height: 150px;
+    height: 250px;
     border-radius: 8px;
-    top: -200px;
-    background: #434242f7;
-    width: 90%;
+    top: -220px;
+    background: #e9e6e6;
+    width: 95%;
     margin: 0 auto;
-    z-index: 9999;
+    z-index: 601;
     padding: 0px 0;
     box-shadow: -1px 1px 10px 5px rgba(103, 103, 103, 0.418);
   }
@@ -242,14 +242,17 @@
 
   .header-inner-mini {
     display: block;
+    margin-top: 50px;
   }
   .header-inner-box-mini {
     height: 25px;
-    margin: 0 0 5px 0;
     padding: 0;
     display: flex;
     align-items: end;
+    justify-content: start;
     column-gap: 20px;
+    color: black;
+    margin-top: 10px;
   }
 
   .header-inner-box:last-child {
@@ -319,20 +322,24 @@
 
   .header-top-mini {
     margin-top: 5px;
-    font-weight: 400;
-    font-size: 14px;
+    font-weight: 600;
+    font-size: 19px;
     line-height: 17px;
-    color: #ffffff;
   }
-
+  .header-top-usd{
+    color: black;
+  }
   .header-select-one {
     width: 91px;
     margin: 12px 0;
     padding: 0;
     display: block;
-    border: none;
-    color: #ffffff;
-    background-color: #43424296;
+    border-bottom: 2px solid black ;
+    border-radius: 0;
+    font-size: 17px;
+    font-weight: 500;
+    color: black;
+    background-color: inherit;
   }
 
   .header-select-two {
@@ -340,9 +347,12 @@
     margin: 12px 0;
     padding: 0;
     display: block;
-    border: none;
-    color: #ffffff;
-    background-color: #434242ab;
+    border-bottom: 2px solid black ;
+    border-radius: 0;
+    font-size: 17px;
+    font-weight: 500;
+    background-color: inherit;
+    color: black;
   }
 
   .header-nums {
@@ -353,23 +363,23 @@
     left: 0;
     margin: 12px 0;
     padding: 0;
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 28px;
-    color: #ffffff;
+    color: black;
     background-color: inherit;
+    border-bottom: 2px solid black ;
+    border-radius: 0;
+    font-size: 17px;
+    font-weight: 500;
   }
 
-  .header-search {
-    margin-bottom: -420px;
-    padding: 16px 17px 17.03px 16px;
-    border-radius: 50px;
-    background: #3cd298;
+  .header-search  {
+    margin: 0 auto;
+    color: black;
+    background-color: inherit;
+    display: flex;
+    border: 1px solid silver;
+    align-items: start;
+    height: 50px;
   }
-  .header-search:hover {
-    background: #3cd298;
-  }
-
   .search-img {
     display: none;
   }

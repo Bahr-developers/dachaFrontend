@@ -83,7 +83,7 @@
     position: absolute;
     top: 9px;
     right: 0;
-    z-index: 600;
+    z-index: 1;
   }
   .places {
     width: 100%;
